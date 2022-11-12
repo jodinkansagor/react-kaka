@@ -9,72 +9,73 @@ app.set("json spaces", 2);
 const signs = [
   {
     id: 1,
-    signName: "Aries",
-    element: 'Fire',
-    representatedBy: 'Ram'
+    signName: "aries",
+    element: 'fire',
+    representatedBy: 'ram'
   },
   {
     id: 2,
-    signName: "Taurus",
-    element: 'Earth',
-    representatedBy: 'Bull'
+    signName: "taurus",
+    element: 'earth',
+    representatedBy: 'bull'
   },
   {
     id: 3,
-    signName: "Gemini",
-    element: 'Air',
-    representatedBy: 'Twins'
+    signName: "gemini",
+    element: 'air',
+    representatedBy: 'twins'
   },
   {
     id: 4,
-    signName: "Cancer",
-    element: 'Water',
-    representatedBy: 'Crab'
+    signName: "cancer",
+    element: 'water',
+    representatedBy: 'crab'
   },
   {
     id: 5,
-    signName: "Leo",
-    element: 'Lion',
+    signName: "leo",
+    element: "fire",
+    representedBy: 'lion',
   },
   {
     id: 5,
-    signName: "Virgo",
-    element: 'Earth',
-    representatedBy: 'Virgen'
+    signName: "virgo",
+    element: 'earth',
+    representatedBy: 'virgin'
   },
   {
     id: 7,
-    signName: "Libra",
-    element: 'Air',
-    representatedBy: 'Scales'
+    signName: "libra",
+    element: 'air',
+    representatedBy: 'scales'
   },
   {
     id: 8,
-    signName: "Scorpio",
-    element: 'Water',
-    representatedBy: 'Scorpion'
+    signName: "scorpio",
+    element: 'water',
+    representatedBy: 'scorpion'
   },{
     id: 9,
-    signName: "Sagitarius",
-    element: 'Fire',
-    representatedBy: 'Archer'
-  },
-  {
-    id: 2,
-    signName: "Capricon",
-    element: 'Earth',
-    representatedBy: 'Goat'
+    signName: "sagitarius",
+    element: 'fire',
+    representatedBy: 'archer'
   },
   {
     id: 10,
-    signName: "Aquarius",
-    element: 'Air',
-    representatedBy: 'Water bearer'
+    signName: "capricon",
+    element: 'earth',
+    representatedBy: 'goat'
   },
   {
     id: 11,
-    signName: "Pisces",
-    element: 'Water',
+    signName: "aquarius",
+    element: 'air',
+    representatedBy: 'water bearer'
+  },
+  {
+    id: 12,
+    signName: "pisces",
+    element: 'water',
     representatedBy: 'Fish'
   },
 ];
@@ -82,24 +83,16 @@ const signs = [
 
 app.get("/zodiac", (_req, res) => res.send(signs));
 
-// app.get("/appointments", (_req, res) => res.send(appointments));
+app.get("/zodiac/:signName", (req, res) => {
+  res.send(
+    signs.filter(sign => sign.signName === req.params.signName)
+  )
+  res.end()
+})
 
-// app.get("/appointments/:serviceId", (req, res) => {
-//   res.send(
-//     appointments
-//       .filter((appt) => appt.serviceId === parseInt(req.params.serviceId))
-//       .map(({ id, serviceName, apptStartTime, apptDuration }) => ({
-//         id,
-//         serviceName,
-//         apptStartTime,
-//         apptDuration,
-//       }))
-//   );
-//   res.end();
-// });
 
-app.listen(process.env.SERVERPORT || 2000, () => {
+app.listen(2000, () => {
   console.log(
-    `Scheduling server listening on port ${process.env.SERVERPORT || 2000}...`
+    `Scheduling server listening on port 2000}...`
   );
 });

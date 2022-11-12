@@ -76,3 +76,19 @@ Example JSON response:
   },
 ]
 ```
+
+### `GET` /zodiac/:signName
+
+This is an endpoint that will get 1 sign at a time.
+
+Example JSON response:
+
+```json
+[
+  {
+    "id": 1,
+    "signName": "Aries",
+    "element": "Fire",
+    "representatedBy": "Ram"
+  },
+```
