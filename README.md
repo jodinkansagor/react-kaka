@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Hey Mae! Let's code some React!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project used `create-react-app` to make a react repo. Additionally, there is a REST API server that you will run locally. The endpoint is `http://localhost:2000/zodiac`)
 
-## Available Scripts
+## Things to know:
+ - Take as long as you need to. No rush. It's practice
+ - Use functional react. Down with classes! Up with hooks!
+ - If you don't finish, who cares! This is just for you.
 
-In the project directory, you can run:
+ ## Installation and set up.
 
-### `npm start`
+ Ensure you have the following packages installed and updated to the latest versions:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [NVM](http://nvm.sh/)
+- [NodeJS](https://nodejs.org/en/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Execute the following commands in your terminal to get started:
 
-### `npm test`
+```sh
+git clone https://github.com/jodinkansagor/react-kata.git
+cd react-kata
+nvm install
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the local app development server:
 
-### `npm run build`
+```sh
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In a separate terminal start the REST API server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+npm run server
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ok. So what's happening here?
 
-### `npm run eject`
+We have a little express service that when you hit the endpoint `/zodiac`, it will return a list of zodiac signs. Pretty simple. What you need to do is create a react app where there is a landing page with a button on it. The button will send the fetch call to the service and then you need to display the list of signs in some way. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Resources
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I set some stuff up for you. The react app is already initialized. I set up a the scaffolding of the LandingPage component and it is already imported into App.jsx. I also made the scaffolding of the `getZodiacSigns` fetch function. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `GET` /zodiac
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Returns a list of zodiac signs, their element, and their animal/human representation. Each contains:
 
-## Learn More
+- id / house
+- signName
+- element
+- representedBy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Example JSON response:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+[
+  {
+    "id": 1,
+    "signName": "Aries",
+    "element": "Fire",
+    "representatedBy": "Ram"
+  },
+  {
+    "id": 2,
+    "signName": "Taurus",
+    "element": "Earth",
+    "representatedBy": "Bull"
+  },
+  {
+    "id": 3,
+    "signName": "Gemini",
+    "element": "Air",
+    "representatedBy": "Twins"
+  },
+]
+```
