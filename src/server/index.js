@@ -11,25 +11,25 @@ const signs = [
     id: 1,
     signName: "aries",
     element: 'fire',
-    representatedBy: 'ram'
+    representedBy: 'ram'
   },
   {
     id: 2,
     signName: "taurus",
     element: 'earth',
-    representatedBy: 'bull'
+    representedBy: 'bull'
   },
   {
     id: 3,
     signName: "gemini",
     element: 'air',
-    representatedBy: 'twins'
+    representedBy: 'twins'
   },
   {
     id: 4,
     signName: "cancer",
     element: 'water',
-    representatedBy: 'crab'
+    representedBy: 'crab'
   },
   {
     id: 5,
@@ -38,45 +38,45 @@ const signs = [
     representedBy: 'lion',
   },
   {
-    id: 5,
+    id: 6,
     signName: "virgo",
     element: 'earth',
-    representatedBy: 'virgin'
+    representedBy: 'virgin'
   },
   {
     id: 7,
     signName: "libra",
     element: 'air',
-    representatedBy: 'scales'
+    representedBy: 'scales'
   },
   {
     id: 8,
     signName: "scorpio",
     element: 'water',
-    representatedBy: 'scorpion'
+    representedBy: 'scorpion'
   },{
     id: 9,
     signName: "sagitarius",
     element: 'fire',
-    representatedBy: 'archer'
+    representedBy: 'archer'
   },
   {
     id: 10,
     signName: "capricon",
     element: 'earth',
-    representatedBy: 'goat'
+    representedBy: 'goat'
   },
   {
     id: 11,
     signName: "aquarius",
     element: 'air',
-    representatedBy: 'water bearer'
+    representedBy: 'water bearer'
   },
   {
     id: 12,
     signName: "pisces",
     element: 'water',
-    representatedBy: 'Fish'
+    representedBy: 'fish'
   },
 ];
 
